@@ -1,0 +1,23 @@
+<mat-card class="company-card">
+  <mat-card-header>
+    <div mat-card-avatar class="company-header-image"></div>
+    <mat-card-title>{{company?.Title}}</mat-card-title>
+    <mat-card-subtitle>{{company?.Category.Name}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{company?.Description}}
+    </p>
+    <p>
+      {{company?.Content}}
+    </p>
+  </mat-card-content>
+  <mat-card-footer>
+    <span class="display-5">Tags:</span><br />
+    <span *ngFor="let tagItem of companyTags">
+      {{tagItem.Value}},
+    </span>
+  </mat-card-footer>
+
+  <img mat-card-image [src]="company?.PicsUrl">
+</mat-card>
